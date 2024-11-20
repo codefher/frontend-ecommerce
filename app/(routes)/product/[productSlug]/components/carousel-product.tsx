@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { CardContent } from '@/components/ui/card'
-import { Carousel, CarouselItem } from '@/components/ui/carousel'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel'
 
 interface CarouselProdctProps {
   images: {
@@ -11,12 +16,12 @@ interface CarouselProdctProps {
 
 const CarouselProdct = (props: CarouselProdctProps) => {
   const { images } = props
-  console.log(images)
+  console.log('images', images)
 
   return (
     <div className="sm:px-16">
       <Carousel>
-        <CardContent>
+        <CarouselContent>
           {images.map(image => (
             <CarouselItem key={image.id}>
               <img
@@ -26,7 +31,9 @@ const CarouselProdct = (props: CarouselProdctProps) => {
               />
             </CarouselItem>
           ))}
-        </CardContent>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext className="hidden sm:flex" />
       </Carousel>
     </div>
   )
