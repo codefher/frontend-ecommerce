@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-urbanist: 'Urbanist', sans-serif; /* Esto debe coincidir con el nombre configurado */
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-urbanist), sans-serif; /* Aplica la variable de fuente */
 }
 
 @layer utilities {
